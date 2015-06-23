@@ -1,0 +1,176 @@
+.body {
+    min-width: 320px;
+}
+
+/* Global fixed width Fix */
+.container {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    @include screen("lg"){
+        max-width: 1020px !important;
+    } 
+}
+
+/* Gets rid of boostrap 30px width as 20px is better visually */
+.row {
+    margin-left: -10px !important;
+    margin-right: -10px !important;
+}
+
+/* Remove the 15px padding on the columsn widths  as 20px is better visually */
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-1 {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+/* Remove Input Shadows on iPad */
+input[type="text"], input[type="email"], input[type="search"], input[type="password"] {
+    -webkit-appearance: none;
+    -moz-appearance: none; /* mobile firefox too! */
+}
+
+/* Hide placeholder for browsers that support HTML5 input Placeholder 8*/
+.placeholder-hide {
+    display: none;
+}
+
+.capital::first-letter {
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+@include screen("xs") {
+    .terms-and-conditions-page .lebara-terms-and-conditions h1:first-child {
+        display: none;
+    }
+}
+
+/* IE 9 fixes */
+.lt-ie10 {
+    .placeholder-hide {
+        display: block !important;
+        margin-top: 15px;
+    }
+}
+
+/* IE 7/8 */
+.lt-ie9 {
+    /* Grid fixes */
+    .col-md-2 {
+        width: 150px;
+    }
+    .col-md-6 {
+        max-width: 490px;
+    }
+
+    /* Input Fix - Show it*/
+    .placeholder-hide {
+        display: block !important;
+        margin-top: 15px;
+    }
+
+    /* Form Fix */
+    .verify-mylebara .form-control {
+        margin-top: 0;
+    }
+
+    .checkbox.pull-right {
+        width: 200px;
+    }
+}
+
+
+/* IE7 Fixes */
+.lt-ie8 {
+    /* Global Fixes */
+    .col-md-3 {
+        width: 22.5% !important;
+    }
+    .lebara-search-results-page .pagination {
+        width: 300px;
+        padding-left: 50px;
+        text-align: center;
+    }
+    .leb-common-questions ul {
+        margin-left: 0px;
+    }
+    .lebara-search-results-page .search-module {
+        padding-bottom: 0px;
+    }
+    /* Header/Menu fixes */
+    #leb-search-qry {
+        height: 20px !important;
+        width: 100px;
+    }
+    .search-wrap .input-group-btn,
+    .search-wrap .input-group-btn .btn {
+        height: 34px !important;
+        display: block;
+    }
+    .dropdown-menu {
+        z-index: 2000;
+    }
+    .navbar-wrapper {
+        z-index: 11;
+    }
+    .navbar .nav > li {
+        z-index: 1001;
+    }
+    /* 12 Col hero - homepage */
+    .homepage-hero .button-row > div {
+        width: 18.5%;
+    }
+    /* rate wighet - jomepage */
+    #ratewidget-box-input .rate-input {
+        padding-top: 15px;
+        font-size: 14px;
+    }
+    /* ie 7 clear fix - originally used for topup_step1 */
+    .ie7-clear-fix {
+        clear: both;
+    }
+    /* Offer row - homepage */
+    .offer-1,
+    .offer-2,
+    .offer-3,
+    .offer-4 {
+        width: 236px !important;
+        margin-top: 20px;
+    }
+    /* Footer fixes */
+    .footer-nav .col-md-2 {
+        width: 10% !important;
+        display: block;
+    }
+    .footer-sitemap .row > .col-xs-3 {
+        float: right !important;
+    }
+    hr {
+        clear: both;
+    }
+}
+
+/* Fix for datepicker position on small screens */
+@include screen('xs') {
+    .bootstrap-datetimepicker-widget {
+        right: 0 !important;
+        left: 0 !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        &:before, &:after{
+            display:none !important;
+        }
+    }
+}
+
+/* Form placeholders fix */
+.lt-ie8-init {
+    /* needed for boxsizing polyfill fix to enable hidden elements to be affected  */
+    .hidden, .dropdown-menu {
+        display: block;
+        visibility: visible;
+        position: absolute;
+        left: -99999px !important;
+    }
+}

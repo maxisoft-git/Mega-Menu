@@ -1,0 +1,572 @@
+/* GLOBAL STYLES FORM THE STYLE GUIDE */
+
+h1, h2, h3, h4 {
+    @include font-gotham-light;
+    color: $black;
+    
+    &.primary {
+        color: $lebara-blue-light;
+    }
+}
+
+h1 {
+    font-size: 30px;
+    line-height: 34px;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 26px;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 26px;
+}
+
+h4 {
+    font-size: 20px;
+    line-height: 22px;
+} 
+
+p {
+    font-size: 12px;
+    @include font-gotham-book;
+}
+
+small, .lebara-terms-and-conditions {
+    font-size: 12px;
+    line-height: 14px;
+    @include font-gotham-light;
+}
+
+/* When a text too long it's normally extend into two line. 
+   By adding this class it will cause "..." 3 dot at the end and remain the same line */
+.ellipsis{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+a,
+.btn-link {
+    color: $lebara-blue-light;
+    
+    &.underlined {
+        text-decoration: underline;
+    }
+    
+    &.search-result-item-title:hover,
+    &.search-result-item-location:hover,
+    &.manualEntry:hover,
+    &.form-back:hover,
+    &.form-cancel:hover {
+        color: $lebara-orange !important;
+    }
+}
+
+/* Used for T and C's */
+.small {
+    font-size: 10px;
+    line-height: 12px;
+}
+
+.lead {
+        font-size: 12px;
+    }
+
+section {
+    position: relative; 
+    z-index: 0;
+}
+
+hr.dark {
+    border-top: solid 1px #989898;
+}
+
+label {
+    font-weight: normal;
+}
+
+table.zebra {
+    border: 1px solid $lebara-grey-light;
+    
+    tr:nth-child(odd) {
+        background-color: $lebara-grey-light;
+    }
+}
+
+.table-scroll {
+    overflow-x: auto;
+    margin: 0 0 20px 0;
+
+    table td {
+        white-space: nowrap;
+    }
+}
+
+.secure-box {
+    width:100%;
+    text-align: right;
+}
+
+.row-xs:before, .row-xs:after {
+    content: " ";
+    display: table;
+}
+
+.row-xs:after{
+    clear: both;
+}
+
+.line-break-xs {
+    display: block;
+    margin: 10px 0 0 0;
+
+    @include screens(md lg){ 
+        margin:0;
+        display: inline-block;
+    }
+}
+
+.special-offer-helper {
+    background: $lebara-blue-dark !important;
+    
+    .mask {
+        background: #005376 url("../img-responsive/specialoffermask.png") no-repeat 0 100%;
+        height: 17px;
+        width: 17px;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+    }
+}
+
+.glyphicon-lock {
+    .text {
+        padding-left: 6px;
+        @include font-arial;
+        font-size: 12px;
+        position: relative;
+        top: -2px;
+    }
+}
+
+.form-back,
+.form-cancel {
+    font-size: 24px;
+    text-decoration: underline;
+    letter-spacing: 1px;
+    float: left;
+    cursor: pointer;
+}
+
+.ajaxError {
+    border: 1px solid $lebara-orange;
+}
+
+.no-browser {
+	padding: 50px 20px;
+	background: #f2dede;
+	color: #a94442;
+	text-align: center;
+	border-bottom: 5px solid #a94442;
+
+	p {
+		font-weight: bold;
+	}
+}
+
+.formErrDisp {
+	padding: 5px;
+	margin: 2px 0;
+
+	&:before {
+		content: "\e101";
+		margin-right: 5px;
+		font-family: 'Glyphicons Halflings';
+	}
+}
+
+.error {
+	border: 2px solid $lebara-red !important;
+}
+
+#overlay {
+	width: 100%;
+	height: 100%;
+	display: table;
+    opacity: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 5000;
+	background: rgba(51, 51, 51, 0.9);
+
+    > div {
+        vertical-align: middle;
+        display: table-cell;
+        float: none;
+
+        h1 {
+            margin-top: 0;
+            @include font-gotham-book;
+            font-weight: bold;
+            font-size: 39px;
+            color: $lebara-orange;
+        }
+
+        p {
+            margin-bottom: 0;
+            @include font-gotham-book;
+            font-weight: bold;
+            line-height: 22px;
+            font-size: 16px;
+            color: $white;
+        }
+
+        a {
+            color: $white;
+
+            &.btn {
+                margin-top: 20px;
+            }
+       	}
+
+        .services {
+            margin-top: 20px;
+
+            a {
+                @include screens(xxs) {
+                    width: 100%;
+                    display: block;
+                    margin-left: 0!important;
+                    text-align: left;
+                }
+
+                & + a {
+                    margin-left: 10px;
+
+                    @include screen(xxs) {
+                        margin-top: 15px;
+                    }
+                }
+
+                img {
+                    margin-right: 5px;
+
+                    @include screen(xxs) {
+                        width: 23px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.countrySelect {
+    .dropSection {
+        @include screens(md lg) {
+            width: 30%;
+            display: inline-block;
+        }
+
+        .dropSectionDesk {
+            position: relative;
+
+            .inputWrap {
+                position: relative;
+
+                #flagSelect {
+                    width: 0;
+                    height: 0;
+                    display: none;
+                    position: absolute;
+                }
+
+                &.countrySet {
+                    #flagSelect {
+                        width: auto;
+                        height: 20px;
+                        margin: -10px 0 0 10px;
+                        display: block;
+                        top: 50%;
+                    }
+
+                    .countryCode {
+                        padding-left: 50px;
+                    }
+                }
+            }
+
+            .dropdownList {
+                display: none;
+
+                &.open {
+                    display: block;
+                }
+
+                .dialCode {
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        .dropSectionTab {
+            .dropdownList {
+                width: 100%;
+                margin-top: 0;
+            }
+
+            .dropdown-toggle {
+                text-align: right;
+
+                div {
+                    float: left;
+                }
+            }
+
+            .countryLabel {
+                margin-right: 10px;
+
+                @include screen(xxs) {
+                    white-space: normal;
+                }
+            }
+
+            .countryVal {
+                margin-right: 10px;
+                display: none;
+            }
+        }
+
+        .dropdownList {
+            max-height: 240px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            position: absolute;
+        }
+
+        a {
+            margin: 5px 0;
+            padding: 10px 20px;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        img {
+            width: auto;
+            height: 20px;
+            margin-right: 10px;
+            
+            @include screen(xxs) {
+                display: none;
+            }
+        }
+    }
+
+    .mobSection {
+        @include screens(md lg) {
+            width: 68%;
+            display: inline-block;
+        }
+    }
+}
+
+.spinner {
+    display: none;
+
+    [class*="glyphicon-"] {
+        animation: spin .7s infinite linear;
+        -webkit-animation: spin2 .7s infinite linear;
+    }
+
+    span {
+        margin-left: 20px;
+        color: $black;
+    }
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+.underlined {
+    text-decoration: underline !important;
+}
+
+h2.title {
+    padding: 10px;
+    background: $lebara-grey-light;
+}
+
+.text-bold {
+    font-weight: bold !important;
+}
+
+#dob.date {
+    .add-on {
+        width: 1%;
+        padding: 6px 12px;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 1;
+        color: #555555;
+        text-align: center;
+        cursor: pointer;
+        white-space: nowrap;
+        vertical-align: middle;
+        display: table-cell;
+        background-color: #eeeeee;
+
+        @include border-radius(4px 4px 4px 4px);
+    }
+
+    .add-on:last-child {
+        border-left: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+    }
+
+    #leb-dob {
+        cursor: pointer;                
+    }
+}
+
+.bootstrap-datetimepicker-widget {
+    .datepicker-months,
+    .datepicker-days {
+        .prev,
+        .next {
+            padding-left: 0;
+            padding-right: 0;
+            width: 0;
+            visibility: hidden;
+        }
+    }
+
+    .old:not(.disabled) {
+        color: inherit;
+    }
+
+    .switch {
+        background: inherit;
+    }
+}
+
+div.auto-address {
+    > .address {
+        display: none;
+
+        label {
+            font-weight: bold;
+            color: $lebara-blue-light;
+        }
+
+        select {
+            border: 2px solid $lebara-blue-light;
+        }
+    }
+
+    .houseNumber, .addressExt {
+        display: none;
+    }
+
+    .houseNumber:first-child {
+        display: block !important;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .spinner {
+        margin-top: 15px;
+
+        .glyphicon-refresh {
+            margin-right: 5px;
+            color: $lebara-blue-light;
+        }
+    }
+
+    .no-results {
+        cursor: pointer;
+    }
+
+    #leb-details-pCodeFind {
+        text-transform: uppercase;
+    }
+}
+
+div.manual-address {
+    display: none;
+
+    h2.text-center {
+        margin-top: 0;
+        padding: 0;
+        color: $lebara-blue-light;
+        border: none;
+        background: none;
+    }
+
+    .new-search {
+        font-size: 16px;
+        font-style: italic;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    #leb-details-pCodeFind {
+        text-transform: uppercase;
+    }
+}
+
+div.auto-address,
+div.manual-address {
+    .form-group {
+        overflow: hidden;
+    }
+    
+    .addressExt {
+        .col-xs-12.col-sm-2 {
+            padding: 0 2px !important;
+
+            @include screen('!xs') {
+                width: 20%;
+            }
+        }
+    }
+
+    .help-block {
+        margin-bottom: 0;
+        font-size: 12px;
+    }
+}
+
+.full-buffer {
+    padding: 30px !important;
+}
+
+.bs-component {
+    position: relative;
+    overflow: hidden;
+}
+
+.orange-bg {
+    background-color: $lebara-orange;
+}
+
+.pink-bg {
+    background-color: $lebara-pink;
+}
+
+.default-bg {
+    background-color: $lebara-blue-light;
+}

@@ -1,0 +1,40 @@
+//** LEBARA VARIABLES FOR USE IN PROJECT
+
+$lebara-blue-dark: #00a1e4;
+$lebara-blue-light: #00a6eb;
+$lebara-blue-darker: #005376;
+$lebara-orange-dark: #ad5025;
+$lebara-orange: #ea7125;
+$lebara-red: #cc092f;
+$lebara-pink: #d1005d;
+$lebara-purple: #675a9e;
+$lebara-rubine-red: #d1005d;
+$lebara-rubine-red-dark: #85003B;
+$lebara-yellow: #f4aa00;
+$lebara-grey: #cbcbcb;
+$lebara-grey-mid: #878787;
+$lebara-grey-dark: #444;
+$lebara-grey-darker: #353535;
+$lebara-grey-light: #ededed;
+$lebara-green-in-stock: #01b93c;
+$lebara-blue-gradient-button-secondary-start: #00a9eb;
+$lebara-blue-border: #0072bc;
+$lebara-drop-shadow-button: #cccccc;
+$lebra-sso-blue-hover: #0082b8;
+$lebara-charcoal: #444444;
+
+$screen-xxs-max: 480px !default;
+
+$white: #ffffff;
+$black: #000000;
+
+// You can use these by adding the following line to the CSS declaration:
+// @include $font-gotham-light
+@mixin font-arial         { font-family: Arial, Helvetica, sans-serif; font-weight: normal; font-style: normal;}
+@mixin font-gotham-light  { font-family: 'Gotham A', 'Gotham B', 'Open Sans'; font-weight: 300; font-style: normal;}
+@mixin font-gotham-book   { font-family: 'Gotham A', 'Gotham B', 'Open Sans'; font-weight: 400; font-style: normal;}
+@mixin font-gotham-medium { font-family: 'Gotham A', 'Gotham B', 'Open Sans'; font-weight: 500; font-style: normal;}
+@mixin font-gotham-bold   { font-family: 'Gotham A', 'Gotham B', 'Open Sans'; font-weight: 700; font-style: normal;}
+
+//* OVERRIDE BOOTSTRAP DEFAULTS */
+$brand-primary: $lebara-blue-light;

@@ -1,0 +1,133 @@
+$percentage: 20;
+
+.btn {
+	cursor: pointer;
+	@include font-gotham-book;
+	
+	@include transition(all, .3s, ease-out);
+
+	&,
+	&:hover,
+	&:active,
+	&:focus,
+	&.disabled,
+	&[disabled] {
+		outline: 0;
+		text-decoration: none;
+		
+		@include box-shadow(none);
+	}
+
+	&.btn-lg {
+		font-size: 16px;
+		@include border-radius(4px);
+	}
+
+	&.disabled,
+	&[disabled] {
+		cursor: default;
+		opacity: 0.4;
+		filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+	}
+
+	&.btn-primary,
+	&.btn-default,
+	&.btn-orange,
+	&.btn-pink,
+
+	&.btn-default-inverted,
+	&.btn-default-inverted-orange,
+	&.btn-default-inverted-pink {
+		border: 2px solid;
+
+		@include screen('xs') {
+			width: 100%;
+		}
+	}
+
+	&.btn-primary {
+		color: $white;
+		border-color: $lebara-blue-light;
+		background: $lebara-blue-light;
+
+		&:hover, 
+		&:active,
+		&:focus {
+			border-color: shade($lebara-blue-light, $percentage);
+			background: shade($lebara-blue-light, $percentage);
+		}
+	}
+
+	&.btn-default {
+		color: $lebara-blue-light;
+		border-color: $lebara-blue-light;
+		background: transparent;
+
+		&:hover, 
+		&:active,
+		&:focus {
+			color: $white;
+			border-color: shade($lebara-blue-light, $percentage);
+			background: shade($lebara-blue-light, $percentage);
+		}
+	}
+
+	&.btn-default-inverted {
+		color: $white;
+		border-color: $white;
+		background: $lebara-blue-light;		
+
+		&:hover, 
+		&:active,
+		&:focus {
+			color: $lebara-blue-light;
+			background: $white;
+		}
+	}
+
+	&.btn-default-inverted-orange {
+		color: $white;
+		border-color: $white;
+		background: transparent;		
+
+		&:hover, 
+		&:active,
+		&:focus {
+			color: $lebara-orange;
+			background: $white;
+		}
+	}
+
+	&.btn-default-inverted-pink {
+		color: $white;
+		border-color: $white;
+		background: transparent;		
+
+		&:hover, 
+		&:active,
+		&:focus {
+			color: $lebara-pink;
+			background: $white;
+		}
+	}
+
+	&.btn-link-inverted {
+		padding: 0;
+		color: $white;
+		
+		&:hover, 
+		&:active,
+		&:focus {
+			text-decoration: underline;
+		}
+
+	}
+
+	svg {
+		width: 20px;
+		height: 30px;
+		fill: $white;
+
+		@include transition(fill, .3s, ease-out);
+	}
+}

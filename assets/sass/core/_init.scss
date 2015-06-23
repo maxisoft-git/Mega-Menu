@@ -1,0 +1,8 @@
+@import "compass/css3";
+
+// Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint: 992px;
+
+// Glyphicons fonts path
+$bootstrap-sass-asset-helper: false;
+$icon-font-path: '//netdna.bootstrapcdn.com/bootstrap/3.3.4/fonts/';

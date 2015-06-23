@@ -1,0 +1,12 @@
+// Core (base, main or generic scss files)
+@import "core/init";
+@import "bootstrap";
+@import "core/variables";
+@import "core/functions";
+@import "core/fonts";
+@import "core/buttons";
+@import "core/global-styles";
+@import "core/global-fixes";
+
+// Components
+@import "components/global_header";

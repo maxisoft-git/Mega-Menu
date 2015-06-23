@@ -1,0 +1,111 @@
+//////////////////////////
+// RESPONSIVE SHORTCUTS //
+//////////////////////////
+
+//Specific device screen size:
+// @include screen("xs"){ /* Any valid CSS declaration... */ } 
+// @include screen("!xs"){ /* Bigger devices then XS size */ } 
+// @include screen("xs"){} 
+// @include screen("sm"){} 
+// @include screen("md"){} 
+// @include screen("lg"){} 
+
+//Multiple custom device screen size (no apostrophe)
+// @include screens(xs sm lg){} 
+
+//Between 2 custom size
+// @include screenbtw( @screen-xs-max, @screen-md-max ){} 
+// @include screenbtw( "678px", "823px" ){} 
+
+@mixin screen($size)
+{
+    @if $size == "xxs" 
+    {
+        @media (max-width: $screen-xxs-max)
+        {
+            @content;
+        }
+    }
+    @else if $size == "xs" 
+    {
+        @media (max-width: $screen-xs-max)
+        {
+            @content;
+        }
+    }
+    @else if $size == "!xs"
+    {
+        @media (min-width: $screen-sm-min) {  
+            @content;
+        }
+    }
+    @else if $size == "!xxs"
+    {
+        @media (min-width: $screen-xxs-max) {  
+            @content;
+        }
+    }
+    @else if $size == "sm"
+    {
+        @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {  
+            @content;
+        }
+    }
+    @else if $size == "md"
+    {
+        @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {  
+            @content;
+        }
+    }
+    @else if $size == "lg"
+    {
+        @media (min-width: $screen-lg-min) {  
+            @content;
+        }
+    }
+}
+
+@mixin screens($sizes)
+{
+    @each $size in $sizes {
+        @if $size == xxs
+        {
+            @media (max-width: $screen-xxs-max)
+            {
+                @content;
+            }
+        }
+        @else if $size == xs
+        {
+            @media (max-width: $screen-xs-max) {  
+                @content;
+            }
+        }
+        @else if $size == sm
+        {
+            @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {  
+                @content;
+            }
+        }
+        @else if $size == md
+        {
+            @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {  
+                @content;
+            }
+        }
+        @else if $size == lg
+        {
+            @media (min-width: $screen-lg-min) {  
+                @content;
+            }
+        }
+    }
+}
+
+@mixin screenbtw($min, $max)
+{
+    @media (min-width: $min) and (max-width: $max) 
+    {
+        @content;
+    }
+}
